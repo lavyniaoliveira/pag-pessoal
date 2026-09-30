@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,19 +11,97 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Pequenos ajustes de cores -->
+    <style>
+
+        :root {
+            --laranja: #ff6b0b;
+            --laranja-escuro: #e85d00;
+            --creme: #fff0dd;
+            --marrom: #211813;
+            --texto: #211813;
+        }
+
+        body {
+            color: var(--texto);
+        }
+
+        .bg-principal {
+            background-color: var(--creme);
+        }
+
+        .bg-marrom {
+            background-color: var(--marrom);
+        }
+
+        .text-laranja {
+            color: var(--laranja);
+        }
+
+        .btn-laranja {
+            background-color: var(--laranja);
+            border-color: var(--laranja);
+            color: white;
+        }
+
+        .btn-laranja:hover {
+            background-color: var(--laranja-escuro);
+            border-color: var(--laranja-escuro);
+            color: white;
+        }
+
+        .btn-outline-laranja {
+            color: var(--laranja-escuro);
+            border-color: var(--laranja);
+        }
+
+        .btn-outline-laranja:hover {
+            background-color: var(--laranja);
+            border-color: var(--laranja);
+            color: white;
+        }
+
+        .borda-laranja {
+            border-color: var(--laranja) !important;
+        }
+
+        .navbar-laranja {
+            border-bottom: 3px solid var(--laranja);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            transition: 0.2s;
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
+
+    <!-- ========================= -->
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- ========================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-marrom sticky-top navbar-laranja">
 
         <div class="container">
 
-            <a class="navbar-brand fw-bold text-warning" href="#inicio">
+            <!-- LOGO -->
+            <a class="navbar-brand fw-bold text-laranja fs-4" href="#inicio">
                 LV
             </a>
 
+
+            <!-- MENU MOBILE -->
             <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -32,6 +111,8 @@
 
             </button>
 
+
+            <!-- LINKS -->
             <div class="collapse navbar-collapse" id="menu">
 
                 <ul class="navbar-nav ms-auto">
@@ -44,19 +125,19 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="#sobre">
-                            Sobre mim
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#formacao">
-                            Formação
+                            Sobre
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="#projetos">
                             Projetos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formacao">
+                            Formação
                         </a>
                     </li>
 
@@ -81,51 +162,54 @@
     </nav>
 
 
+
+    <!-- ========================= -->
     <!-- INÍCIO -->
-    <section id="inicio" class="bg-dark text-white py-5">
+    <!-- ========================= -->
 
-        <div class="container py-5">
+    <section id="inicio" class="bg-principal py-5">
 
-            <div class="row align-items-center">
+        <div class="container">
 
-                <div class="col-md-7">
+            <div class="row align-items-center min-vh-75">
 
-                    <p class="text-warning fw-bold">
+                <div class="col-lg-8">
+
+                    <p class="fw-bold text-laranja mb-2">
                         OLÁ, EU SOU
                     </p>
 
-                    <h1 class="display-3 fw-bold">
+                    <h1 class="display-3 fw-bold mb-3">
                         Lavynia Oliveira
                     </h1>
 
-                    <h2 class="fw-normal text-secondary">
+                    <h2 class="fs-3 fw-normal text-laranja mb-4">
                         Estudante de Análise e Desenvolvimento de Sistemas
                     </h2>
 
-                    <p class="lead mt-4">
-                        Tecnologia, desenvolvimento e criatividade.
-                        Buscando sempre aprender e transformar ideias
-                        em projetos.
+                    <p class="lead mb-4">
+                        Com formação em Eletromecânica, atualmente estou
+                        desenvolvendo meus conhecimentos em tecnologia,
+                        programação e desenvolvimento de sistemas.
                     </p>
 
-                    <a href="#projetos"
-                        class="btn btn-warning btn-lg mt-3">
-                        Conheça meus projetos
-                    </a>
 
-                </div>
+                    <div class="d-flex flex-wrap gap-2">
 
-                <div class="col-md-5 text-center mt-4 mt-md-0">
+                        <a href="#projetos"
+                            class="btn btn-laranja btn-lg">
 
-                    <div class="border border-warning border-3 rounded p-5">
+                            Ver meus projetos
 
-                        <span class="display-1 fw-bold text-warning">
-                            LV
-                        </span>
+                        </a>
 
-                        <p class="mb-0 mt-3">
-                            Tecnologia & Inovação
-                        </p>
+
+                        <a href="#certificados"
+                            class="btn btn-outline-laranja btn-lg">
+
+                            Meus certificados
+
+                        </a>
 
                     </div>
 
@@ -138,7 +222,11 @@
     </section>
 
 
+
+    <!-- ========================= -->
     <!-- SOBRE MIM -->
+    <!-- ========================= -->
+
     <section id="sobre" class="py-5">
 
         <div class="container">
@@ -147,11 +235,10 @@
                 Sobre mim
             </h2>
 
-            <div class="text-center mb-5">
-                <span class="badge text-bg-warning">
-                    Um pouco sobre quem eu sou
-                </span>
-            </div>
+            <p class="text-center text-secondary mb-5">
+                Um pouco sobre quem eu sou.
+            </p>
+
 
             <div class="row justify-content-center">
 
@@ -166,6 +253,7 @@
                         e manutenção.
                     </p>
 
+
                     <p>
                         Durante o curso de Eletromecânica, participei do
                         desenvolvimento do meu TCC, em que meu grupo
@@ -176,11 +264,13 @@
                         energia elétrica.
                     </p>
 
+
                     <p>
                         Atualmente, na ADS, venho desenvolvendo conhecimentos
                         em programação, desenvolvimento web, banco de dados
                         e lógica de programação.
                     </p>
+
 
                     <p>
                         Além dos estudos, sou apaixonada por
@@ -190,6 +280,7 @@
                         <strong>BK'</strong> e
                         <strong>Luan Santana</strong>.
                     </p>
+
 
                     <p>
                         Gosto de aprender, descobrir coisas novas e colocar
@@ -207,8 +298,12 @@
     </section>
 
 
+
+    <!-- ========================= -->
     <!-- FORMAÇÃO -->
-    <section id="formacao" class="bg-light py-5">
+    <!-- ========================= -->
+
+    <section id="formacao" class="bg-principal py-5">
 
         <div class="container">
 
@@ -216,22 +311,30 @@
                 Formação
             </h2>
 
+
             <div class="row g-4">
 
+
                 <!-- ELETROMECÂNICA -->
+
                 <div class="col-md-6">
 
                     <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <span class="badge text-bg-warning mb-3">
+                            <span class="badge mb-3"
+                                style="background-color: #ff6b0b;">
+
                                 Formação técnica
+
                             </span>
+
 
                             <h3 class="card-title">
                                 Eletromecânica
                             </h3>
+
 
                             <p class="card-text">
 
@@ -240,6 +343,7 @@
                                 e manutenção.
 
                             </p>
+
 
                             <p class="card-text">
 
@@ -258,20 +362,24 @@
                 </div>
 
 
+
                 <!-- ADS -->
+
                 <div class="col-md-6">
 
                     <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <span class="badge text-bg-dark mb-3">
+                            <span class="badge bg-dark mb-3">
                                 Formação atual
                             </span>
+
 
                             <h3 class="card-title">
                                 Análise e Desenvolvimento de Sistemas
                             </h3>
+
 
                             <p class="card-text">
 
@@ -281,6 +389,7 @@
                                 e lógica de programação.
 
                             </p>
+
 
                             <p class="card-text">
 
@@ -305,7 +414,11 @@
     </section>
 
 
+
+    <!-- ========================= -->
     <!-- PROJETOS -->
+    <!-- ========================= -->
+
     <section id="projetos" class="py-5">
 
         <div class="container">
@@ -318,34 +431,43 @@
                 Alguns dos projetos que desenvolvi durante meus estudos.
             </p>
 
+
             <div class="row g-4">
 
 
                 <!-- CINEMATCH -->
+
                 <div class="col-md-4">
 
-                    <div class="card h-100 shadow-sm">
+                    <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <span class="badge text-bg-warning mb-3">
+                            <span class="badge mb-3"
+                                style="background-color: #ff6b0b;">
+
                                 Desenvolvimento Web
+
                             </span>
+
 
                             <h3 class="card-title">
                                 CineMatch PRO
                             </h3>
 
+
                             <p class="card-text">
 
-                                Projeto de desenvolvimento web relacionado
-                                a filmes, desenvolvido durante os estudos.
+                                Projeto de desenvolvimento web
+                                relacionado a filmes, desenvolvido
+                                durante os estudos.
 
                             </p>
 
+
                             <a href="https://lavyniaoliveira.github.io/CineMatch-PRO/"
                                 target="_blank"
-                                class="btn btn-warning">
+                                class="btn btn-laranja">
 
                                 Ver projeto
 
@@ -358,32 +480,37 @@
                 </div>
 
 
+
                 <!-- FOODPAY -->
+
                 <div class="col-md-4">
 
-                    <div class="card h-100 shadow-sm">
+                    <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <span class="badge text-bg-success mb-3">
+                            <span class="badge bg-dark mb-3">
                                 Projeto em grupo
                             </span>
+
 
                             <h3 class="card-title">
                                 FoodPay
                             </h3>
 
+
                             <p class="card-text">
 
                                 Projeto desenvolvido em grupo,
-                                envolvendo desenvolvimento de uma
-                                aplicação para o setor alimentício.
+                                envolvendo o desenvolvimento de
+                                uma aplicação para o setor alimentício.
 
                             </p>
 
+
                             <a href="https://github.com/PauloRicardo00/Food-Pay.git"
                                 target="_blank"
-                                class="btn btn-warning">
+                                class="btn btn-laranja">
 
                                 Ver projeto
 
@@ -396,20 +523,27 @@
                 </div>
 
 
+
                 <!-- PRESSÃO HIDRÁULICA -->
+
                 <div class="col-md-4">
 
-                    <div class="card h-100 shadow-sm">
+                    <div class="card h-100 shadow-sm border-0">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <span class="badge text-bg-primary mb-3">
+                            <span class="badge mb-3"
+                                style="background-color: #ff6b0b;">
+
                                 ADS
+
                             </span>
+
 
                             <h3 class="card-title">
                                 Pressão Hidráulica
                             </h3>
+
 
                             <p class="card-text">
 
@@ -419,9 +553,10 @@
 
                             </p>
 
+
                             <a href="https://lavyniaoliveira.github.io/Press-o-Hidr-ulica/"
                                 target="_blank"
-                                class="btn btn-warning">
+                                class="btn btn-laranja">
 
                                 Ver projeto
 
@@ -440,8 +575,12 @@
     </section>
 
 
+
+    <!-- ========================= -->
     <!-- CERTIFICADOS -->
-    <section id="certificados" class="bg-light py-5">
+    <!-- ========================= -->
+
+    <section id="certificados" class="bg-marrom text-white py-5">
 
         <div class="container">
 
@@ -449,7 +588,7 @@
                 Certificados
             </h2>
 
-            <p class="text-center text-secondary mb-5">
+            <p class="text-center text-white-50 mb-5">
                 Cursos e certificações que fazem parte da minha formação.
             </p>
 
@@ -458,35 +597,43 @@
 
 
                 <!-- CERTIFICADO 1 -->
+
                 <div class="col-md-4">
 
-                    <div class="card h-100 shadow-sm border-0">
+                    <div class="card h-100 shadow-sm">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <span class="badge text-bg-warning mb-3">
+                            <span class="badge mb-3"
+                                style="background-color: #ff6b0b;">
+
                                 Tecnologia
+
                             </span>
+
 
                             <h3 class="card-title fs-4">
                                 Fundamentos de TI:
                                 Hardware e Software
                             </h3>
 
+
                             <p class="card-text">
                                 Curso autoinstrucional realizado pela
                                 Escola Virtual.
                             </p>
+
 
                             <p class="text-secondary">
                                 <strong>Carga horária:</strong>
                                 7 horas
                             </p>
 
+
                             <button type="button"
-                                class="btn btn-warning"
+                                class="btn btn-laranja"
                                 data-bs-toggle="modal"
-                                data-bs-target="#certificado1">
+                                data-bs-target="#modalCertificado1">
 
                                 Ver certificado
 
@@ -499,35 +646,41 @@
                 </div>
 
 
+
                 <!-- CERTIFICADO 2 -->
+
                 <div class="col-md-4">
 
-                    <div class="card h-100 shadow-sm border-0">
+                    <div class="card h-100 shadow-sm">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <span class="badge text-bg-success mb-3">
+                            <span class="badge bg-success mb-3">
                                 Cibersegurança
                             </span>
+
 
                             <h3 class="card-title fs-4">
                                 Cibersegurança na Nuvem
                             </h3>
+
 
                             <p class="card-text">
                                 Curso realizado pelo SENAI, com foco
                                 em segurança em ambientes de nuvem.
                             </p>
 
+
                             <p class="text-secondary">
                                 <strong>Carga horária:</strong>
                                 20 horas
                             </p>
 
+
                             <button type="button"
-                                class="btn btn-warning"
+                                class="btn btn-laranja"
                                 data-bs-toggle="modal"
-                                data-bs-target="#certificado2">
+                                data-bs-target="#modalCertificado2">
 
                                 Ver certificado
 
@@ -540,15 +693,17 @@
                 </div>
 
 
+
                 <!-- CERTIFICADO 3 -->
+
                 <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body p-4">
+                            <span class="badge mb-3"
+                                style="background-color: #ff6b0b;">
 
-                    <div class="card h-100 shadow-sm border-0">
-
-                        <div class="card-body">
-
-                            <span class="badge text-bg-warning mb-3">
                                 Inteligência Artificial
+
                             </span>
 
                             <h3 class="card-title fs-4">
@@ -565,16 +720,144 @@
                                 40 horas
                             </p>
 
+
                             <button type="button"
-                                class="btn btn-warning"
+                                class="btn btn-laranja"
                                 data-bs-toggle="modal"
-                                data-bs-target="#certificado3">
+                                data-bs-target="#modalCertificado3">
 
                                 Ver certificado
-
                             </button>
 
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- MODAL CERTIFICADO 1 -->
+
+    <div class="modal fade"
+        id="modalCertificado1"
+        tabindex="-1"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+            <div class="modal-content bg-marrom text-white">
+
+                <div class="modal-header border-secondary">
+
+                    <h5 class="modal-title fw-bold">
+                        Fundamentos de TI: Hardware e Software
+                    </h5>
+
+                    <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <p class="text-white-50">
+                        Certificado de conclusão do curso.
+                    </p>
+
+                    <div class="ratio ratio-4x3">
+
+                        <iframe
+                            src="fundamentos de ti.pdf"
+                            title="Certificado Fundamentos de TI">
+                        </iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CERTIFICADO 2 -->
+
+    <div class="modal fade"
+        id="modalCertificado2"
+        tabindex="-1"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content bg-marrom text-white">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title fw-bold">
+                        Cibersegurança na Nuvem
+                    </h5>
+
+                    <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <p class="text-white-50">
+                        Certificado de conclusão do curso.
+                    </p>
+
+                    <div class="ratio ratio-4x3">
+
+                        <iframe
+                            src="ciberseguranca.pdf"
+                            title="Certificado Cibersegurança na Nuvem">
+                        </iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL CERTIFICADO 3 -->
+    <div class="modal fade"
+        id="modalCertificado3"
+        tabindex="-1"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+
+            <div class="modal-content bg-marrom text-white">
+
+                <div class="modal-header border-secondary">
+
+                    <h5 class="modal-title fw-bold">
+                        Microsoft AI-900
+                    </h5>
+
+                    <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+                
+                <div class="modal-body">
+                    
+                    <p class="text-white-50">
+                        Certificado de conclusão do curso.
+                    </p>
+
+                    <div class="ratio ratio-4x3">
+
+                        <iframe
+                            src="Microsoft AI-900.pdf"
+                            title="Certificado Microsoft AI-900">
+                        </iframe>
 
                     </div>
 
@@ -584,149 +867,27 @@
 
         </div>
 
-    </section>
-
-
-    <!-- MODAL CERTIFICADO 1 -->
-    <div class="modal fade"
-        id="certificado1"
-        tabindex="-1"
-        aria-hidden="true">
-
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">
-                        Fundamentos de TI: Hardware e Software
-                    </h5>
-
-                    <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Fechar">
-                    </button>
-
-                </div>
-
-                <div class="modal-body p-0">
-
-                    <iframe
-                        src="fundamentos de ti.pdf"
-                        width="100%"
-                        height="600px">
-                    </iframe>
-
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
-
-
-    <!-- MODAL CERTIFICADO 2 -->
-    <div class="modal fade"
-        id="certificado2"
-        tabindex="-1"
-        aria-hidden="true">
-
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">
-                        Cibersegurança na Nuvem
-                    </h5>
-
-                    <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Fechar">
-                    </button>
-
-                </div>
-
-                <div class="modal-body p-0">
-
-                    <iframe
-                        src="ciberseguranca.pdf"
-                        width="100%"
-                        height="600px">
-                    </iframe>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- MODAL CERTIFICADO 3 -->
-    <div class="modal fade"
-        id="certificado3"
-        tabindex="-1"
-        aria-hidden="true">
-
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-
-                    <h5 class="modal-title">
-                        Microsoft AI-900
-                    </h5>
-
-                    <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Fechar">
-                    </button>
-
-                </div>
-
-                <div class="modal-body p-0">
-
-                    <iframe
-                        src="Microsoft AI-900.pdf"
-                        width="100%"
-                        height="600px">
-                    </iframe>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
 
     <!-- GITHUB -->
-    <section id="github" class="py-5 bg-dark text-white">
+    <section id="github" class="py-5 bg-principal">
 
         <div class="container text-center">
 
             <h2 class="fw-bold mb-3">
                 GitHub
             </h2>
-
-            <p class="text-secondary">
+            
+            <p class="text-secondary mb-4">
                 Confira meus projetos e acompanhe minha evolução
-                como desenvolvedora.
+                na área de tecnologia.
             </p>
 
             <a href="https://github.com/lavyniaoliveira"
                 target="_blank"
-                class="btn btn-warning">
+                class="btn btn-laranja btn-lg">
+
+                <i class="bi bi-github me-2"></i>
 
                 Acessar meu GitHub
 
@@ -735,18 +896,16 @@
         </div>
 
     </section>
-
-
     <!-- RODAPÉ -->
-    <footer class="bg-black text-white text-center py-4">
+    <footer class="bg-marrom text-white text-center py-4">
 
         <div class="container">
 
-            <p class="mb-1">
-                <strong>Lavynia Oliveira</strong>
+            <p class="mb-1 fw-bold">
+                Lavynia Oliveira
             </p>
 
-            <p class="text-secondary mb-0">
+            <p class="mb-0 text-white-50">
                 Análise e Desenvolvimento de Sistemas
             </p>
 
@@ -754,9 +913,10 @@
 
     </footer>
 
-
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 
