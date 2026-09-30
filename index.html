@@ -2,10 +2,8 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Lavynia Oliveira</title>
 
     <!-- Bootstrap -->
@@ -14,83 +12,118 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
         crossorigin="anonymous">
 
-</head>
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            --laranja: #f97316;
+            --laranja-escuro: #c2410c;
+            --laranja-claro: #fff4e8;
+            --grafite: #1f1611;
+            --bs-body-font-family: 'Poppins', system-ui, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+        body { color: var(--grafite); }
+
+        /* Navbar */
+        .navbar { background: var(--grafite) !important; border-bottom: 3px solid var(--laranja); }
+        .navbar-brand { color: var(--laranja) !important; }
+        .nav-link:hover, .nav-link:focus { color: var(--laranja) !important; }
+
+        /* Início */
+        #inicio { background: linear-gradient(135deg, var(--laranja-claro) 0%, #ffd9b0 100%); }
+        .avatar {
+            width: 190px; height: 190px; border-radius: 50%;
+            background: var(--laranja); color: #fff;
+            font-size: 4.5rem; font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            border: 8px solid #fff;
+            box-shadow: 0 10px 30px rgba(194, 65, 12, .35);
+        }
+
+        /* Botões */
+        .btn-dark, .btn-dark:focus { background: var(--laranja); border-color: var(--laranja); color: #fff; }
+        .btn-dark:hover { background: var(--laranja-escuro); border-color: var(--laranja-escuro); color: #fff; }
+        .btn-outline-dark { color: var(--laranja-escuro); border-color: var(--laranja); }
+        .btn-outline-dark:hover { background: var(--laranja); border-color: var(--laranja); color: #fff; }
+        .btn-light { color: var(--laranja-escuro); font-weight: 600; }
+
+        /* Seções */
+        .bg-light { background: var(--laranja-claro) !important; }
+        h2.fw-bold::after {
+            content: ""; display: block; width: 60px; height: 4px;
+            background: var(--laranja); border-radius: 2px; margin-top: .5rem;
+        }
+        h2.text-center::after { margin-left: auto; margin-right: auto; }
+
+        /* Cards */
+        .card { border: 0; border-top: 4px solid var(--laranja); border-radius: .75rem; transition: transform .2s, box-shadow .2s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 .75rem 1.5rem rgba(194, 65, 12, .18) !important; }
+
+        /* Badges */
+        .badge { background: var(--laranja) !important; color: #fff !important; }
+
+        /* Interesses */
+        .chip {
+            display: inline-block; padding: .35rem .9rem; margin: 0 .4rem .5rem 0;
+            border-radius: 50px; background: var(--laranja-claro);
+            border: 1px solid var(--laranja); color: var(--laranja-escuro);
+            font-weight: 600; font-size: .9rem;
+        }
+
+        /* Modal */
+        .modal-header { background: var(--grafite); color: #fff; border-bottom: 3px solid var(--laranja); }
+        .modal-content { border-radius: .75rem; overflow: hidden; }
+        #pdfFrame { width: 100%; height: 75vh; border: 0; }
+
+        /* GitHub e rodapé */
+        #Github { background: var(--grafite) !important; border-top: 4px solid var(--laranja); }
+        footer { background: #120c08 !important; }
+        footer .fw-bold { color: var(--laranja); }
+    </style>
+</head>
 
 <body>
 
-
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
 
-            <a class="navbar-brand fw-bold fs-3" href="#inicio">
-                LV
-            </a>
+            <a class="navbar-brand fw-bold fs-3" href="#inicio">LV</a>
 
-            <div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+                aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse justify-content-end" id="menu">
                 <ul class="navbar-nav">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio">
-                            Início
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sobre">
-                            Sobre
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projetos">
-                            Projetos
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#formacao">
-                            Formação
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#certificados">
-                            Certificados
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Github">
-                            GitHub
-                        </a>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formacao">Formação</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificados">Certificados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Github">GitHub</a></li>
                 </ul>
-
             </div>
 
         </div>
-
     </nav>
 
     <!-- INÍCIO -->
-    <section id="inicio" class="bg-light py-5">
-
+    <section id="inicio" class="py-5">
         <div class="container py-5">
-
-            <div class="row align-items-center">
+            <div class="row align-items-center g-5">
 
                 <div class="col-md-8">
-                    
-                    <h1 class="display-3 fw-bold">
-                        Lavynia Oliveira
-                    </h1>
+                    <h1 class="display-3 fw-bold">Lavynia Oliveira</h1>
 
-                    <h2 class="fs-4 text-secondary">
+                    <h2 class="fs-4" style="color: var(--laranja-escuro);">
                         Estudante de Análise e Desenvolvimento de Sistemas
                     </h2>
 
@@ -100,35 +133,25 @@
                         programação e desenvolvimento de sistemas.
                     </p>
 
-                    <a href="#projetos" class="btn btn-dark mt-3">
-                        Ver meus projetos
-                    </a>
+                    <a href="#projetos" class="btn btn-dark btn-lg mt-3">Ver meus projetos</a>
+                    <a href="#certificados" class="btn btn-outline-dark btn-lg mt-3 ms-2">Meus certificados</a>
+                </div>
 
-                    <a href="#certificados"
-                        class="btn btn-outline-dark mt-3 ms-2">
-                        Meus certificados
-                    </a>
-
+                <div class="col-md-4 d-flex justify-content-center">
+                    <div class="avatar" aria-hidden="true">LV</div>
                 </div>
 
             </div>
-
         </div>
-
     </section>
-
 
     <!-- SOBRE -->
     <section id="sobre" class="py-5">
-
         <div class="container">
 
-            <h2 class="fw-bold mb-4">
-                Sobre mim
-            </h2>
+            <h2 class="fw-bold mb-4">Sobre mim</h2>
 
             <div class="row">
-
                 <div class="col-md-8">
 
                     <p>
@@ -146,389 +169,244 @@
                         Também sou muito ligada à música. Meus cantores favoritos são BK' e Luan Santana, e uma das minhas músicas favoritas é “Antes dos Gigantes Chegarem”.
                     </p>
 
-                     <p>
+                    <p>
                         Atualmente, busco continuar aprendendo e unir meus conhecimentos de tecnologia e eletromecânica através de novos projetos e experiências.
                     </p>
 
-                </div>
+                    <div class="mt-4">
+                        <span class="chip">Tecnologia</span>
+                        <span class="chip">Programação</span>
+                        <span class="chip">Eletromecânica</span>
+                        <span class="chip">Futebol</span>
+                        <span class="chip">Música</span>
+                    </div>
 
+                </div>
             </div>
 
         </div>
-
     </section>
-
 
     <!-- PROJETOS -->
     <section id="projetos" class="bg-light py-5">
-
         <div class="container">
 
-            <h2 class="fw-bold text-center mb-3">
-                Meus projetos
-            </h2>
+            <h2 class="fw-bold text-center mb-3">Meus projetos</h2>
 
             <p class="text-center text-secondary mb-5">
-                Confira alguns dos projetos que desenvolvi durante minha
-                formação.
+                Confira alguns dos projetos que desenvolvi durante minha formação.
             </p>
 
-
             <div class="row g-4">
-
 
                 <!-- PROJETO 1 -->
                 <div class="col-md-4">
-
                     <div class="card h-100 shadow-sm">
-
                         <div class="card-body">
-
-                            <span class="badge text-bg-warning mb-3">
-                                ADS
-                            </span>
-
-                            <h3 class="card-title">
-                                CineMatch-PRO
-                            </h3>
-
+                            <span class="badge mb-3">ADS</span>
+                            <h3 class="card-title">CineMatch-PRO</h3>
                             <p class="card-text">
-                                Projeto desenvolvido para praticar
-                                conhecimentos de programação,
+                                Projeto desenvolvido para praticar conhecimentos de programação,
                                 desenvolvimento web e tecnologia.
                             </p>
-
                             <p class="text-secondary">
-
-                                <strong>Área:</strong>
-                                Programação e Desenvolvimento Web
-
+                                <strong>Área:</strong> Programação e Desenvolvimento Web
                             </p>
-
                             <a href="https://lavyniaoliveira.github.io/CineMatch-PRO/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-outline-dark">
-
-                                Ver projeto
-
-                            </a>
-
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-dark">Ver projeto</a>
                         </div>
-
                     </div>
-
                 </div>
-
 
                 <!-- PROJETO 2 -->
                 <div class="col-md-4">
-
                     <div class="card h-100 shadow-sm">
-
                         <div class="card-body">
-
-                            <span class="badge text-bg-success mb-3">
-                                ADS
-                            </span>
-
-                            <h3 class="card-title">
-                                FoodPay
-                            </h3>
-
+                            <span class="badge mb-3">ADS</span>
+                            <h3 class="card-title">FoodPay</h3>
                             <p class="card-text">
-                                Projeto desenvolvido durante o curso de
-                                Análise e Desenvolvimento de Sistemas,
-                                utilizando conhecimentos de programação
-                                e desenvolvimento de sistemas.
+                                Projeto desenvolvido durante o curso de Análise e Desenvolvimento
+                                de Sistemas, utilizando conhecimentos de programação e
+                                desenvolvimento de sistemas.
                             </p>
-
                             <p class="text-secondary">
-                                <strong>Área:</strong>
-                                Desenvolvimento de Sistemas
+                                <strong>Área:</strong> Desenvolvimento de Sistemas
                             </p>
-
                             <a href="https://pauloricardo00.github.io/Food-Pay/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-outline-dark">
-
-                                Ver projeto
-
-                            </a>
-
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-dark">Ver projeto</a>
                         </div>
-
                     </div>
-
                 </div>
-
 
                 <!-- PROJETO 3 -->
                 <div class="col-md-4">
-
                     <div class="card h-100 shadow-sm">
-
                         <div class="card-body">
-
-                            <span class="badge text-bg-primary mb-3">
-                                ADS
-                            </span>
-
-                            <h3 class="card-title">
-                                Pressão Hidráulica
-                            </h3>
-
+                            <span class="badge mb-3">ADS</span>
+                            <h3 class="card-title">Pressão Hidráulica</h3>
                             <p class="card-text">
-                                Projeto desenvolvido durante as aulas de desenvolvimento web
-                               
+                                Projeto desenvolvido durante as aulas de desenvolvimento web.
                             </p>
-
                             <p class="text-secondary">
-
-                                <strong>Área:</strong>
-                                Desenvolvimento web
-
+                                <strong>Área:</strong> Desenvolvimento web
                             </p>
-
                             <a href="https://lavyniaoliveira.github.io/Press-o-Hidr-ulica/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-outline-dark">
-
-                                Ver projeto
-
-                            </a>
-
+                                target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-dark">Ver projeto</a>
                         </div>
-
                     </div>
-
                 </div>
 
             </div>
-
         </div>
-
     </section>
-
 
     <!-- FORMAÇÃO -->
     <section id="formacao" class="py-5">
-
         <div class="container">
 
-            <h2 class="fw-bold text-center mb-5">
-                Formação
-            </h2>
+            <h2 class="fw-bold text-center mb-5">Formação</h2>
 
             <div class="row g-4">
 
-
-                <!-- ELETROMECÂNICA -->
                 <div class="col-md-6">
-
                     <div class="card shadow-sm h-100">
-
                         <div class="card-body p-4">
-
-                            <span class="badge text-bg-primary mb-3">
-                                Curso Técnico
-                            </span>
-
-                            <h3 class="card-title">
-                                Eletromecânica
-                            </h3>
-
+                            <span class="badge mb-3">Curso Técnico</span>
+                            <h3 class="card-title">Eletromecânica</h3>
                             <p class="card-text text-secondary">
-                                Formação técnica em Eletromecânica,
-                                com conhecimentos relacionados à área
-                                industrial e manutenção.
+                                Formação técnica em Eletromecânica, com conhecimentos
+                                relacionados à área industrial e manutenção.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
-                <!-- ADS -->
                 <div class="col-md-6">
-
                     <div class="card shadow-sm h-100">
-
                         <div class="card-body p-4">
-
-                            <span class="badge text-bg-success mb-3">
-                                Graduação
-                            </span>
-
-                            <h3 class="card-title">
-                                Análise e Desenvolvimento de Sistemas
-                            </h3>
-
+                            <span class="badge mb-3">Graduação</span>
+                            <h3 class="card-title">Análise e Desenvolvimento de Sistemas</h3>
                             <p class="card-text text-secondary">
-                                Graduação em andamento, com foco em
-                                programação, desenvolvimento de sistemas
-                                e tecnologia.
+                                Graduação em andamento, com foco em programação,
+                                desenvolvimento de sistemas e tecnologia.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
-
     <!-- CERTIFICADOS -->
-    <!-- CERTIFICADOS -->
-<section id="certificados" class="bg-light py-5">
+    <section id="certificados" class="bg-light py-5">
+        <div class="container">
 
-    <div class="container">
+            <h2 class="fw-bold text-center mb-3">Certificados</h2>
 
-        <h2 class="fw-bold text-center mb-3">
-            Certificados
-        </h2>
+            <p class="text-center text-secondary mb-5">
+                Cursos e certificações que fazem parte da minha formação.
+            </p>
 
-        <p class="text-center text-secondary mb-5">
-            Cursos e certificações que fazem parte da minha formação.
-        </p>
+            <div class="row g-4">
 
-        <div class="row g-4">
-
-            <!-- CERTIFICADO 1 -->
-            <div class="col-md-4">
-
-                <div class="card h-100 shadow-sm">
-
-                    <div class="card-body">
-
-                        <span class="badge text-bg-primary mb-3">
-                            Tecnologia
-                        </span>
-
-                        <h3 class="card-title fs-4">
-                            Fundamentos de TI:
-                            Hardware e Software
-                        </h3>
-
-                        <p class="card-text">
-                            Curso autoinstrucional realizado pela
-                            Escola Virtual.
-                        </p>
-
-                        <p class="text-secondary">
-                            <strong>Carga horária:</strong> 7 horas
-                        </p>
-
-                        <a href="fundamentos de ti.pdf"
-                            target="_blank"
-                            class="btn btn-outline-dark">
-                            Ver certificado
-                        </a>
-
+                <!-- CERTIFICADO 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <span class="badge mb-3">Tecnologia</span>
+                            <h3 class="card-title fs-4">Fundamentos de TI: Hardware e Software</h3>
+                            <p class="card-text">Curso autoinstrucional realizado pela Escola Virtual.</p>
+                            <p class="text-secondary"><strong>Carga horária:</strong> 7 horas</p>
+                            <button type="button" class="btn btn-outline-dark"
+                                data-bs-toggle="modal" data-bs-target="#modalCertificado"
+                                data-pdf="fundamentos de ti.pdf"
+                                data-titulo="Fundamentos de TI: Hardware e Software">
+                                Ver certificado
+                            </button>
+                        </div>
                     </div>
+                </div>
 
+                <!-- CERTIFICADO 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <span class="badge mb-3">Cibersegurança</span>
+                            <h3 class="card-title fs-4">Cibersegurança na Nuvem</h3>
+                            <p class="card-text">
+                                Curso realizado pelo SENAI, com foco em segurança em ambientes de nuvem.
+                            </p>
+                            <p class="text-secondary"><strong>Carga horária:</strong> 20 horas</p>
+                            <button type="button" class="btn btn-outline-dark"
+                                data-bs-toggle="modal" data-bs-target="#modalCertificado"
+                                data-pdf="Certificado_Cibersegurança na Nuvem.pdf"
+                                data-titulo="Cibersegurança na Nuvem">
+                                Ver certificado
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CERTIFICADO 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <span class="badge mb-3">Inteligência Artificial</span>
+                            <h3 class="card-title fs-4">Microsoft AI-900</h3>
+                            <p class="card-text">
+                                Implantação de Serviços de Inteligência Artificial em Nuvem - Microsoft AI-900.
+                            </p>
+                            <p class="text-secondary"><strong>Carga horária:</strong> 40 horas</p>
+                            <button type="button" class="btn btn-outline-dark"
+                                data-bs-toggle="modal" data-bs-target="#modalCertificado"
+                                data-pdf="Microsoft AI-900.pdf"
+                                data-titulo="Microsoft AI-900">
+                                Ver certificado
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-
-
-            <!-- CERTIFICADO 2 -->
-            <div class="col-md-4">
-
-                <div class="card h-100 shadow-sm">
-
-                    <div class="card-body">
-
-                        <span class="badge text-bg-success mb-3">
-                            Cibersegurança
-                        </span>
-
-                        <h3 class="card-title fs-4">
-                            Cibersegurança na Nuvem
-                        </h3>
-
-                        <p class="card-text">
-                            Curso realizado pelo SENAI, com foco
-                            em segurança em ambientes de nuvem.
-                        </p>
-
-                        <p class="text-secondary">
-                            <strong>Carga horária:</strong> 20 horas
-                        </p>
-
-                        <a href="Certificado_Cibersegurança na Nuvem.pdf"
-                            target="_blank"
-                            class="btn btn-outline-dark">
-                            Ver certificado
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CERTIFICADO 3 -->
-            <div class="col-md-4">
-
-                <div class="card h-100 shadow-sm">
-
-                    <div class="card-body">
-
-                        <span class="badge text-bg-warning mb-3">
-                            Inteligência Artificial
-                        </span>
-
-                        <h3 class="card-title fs-4">
-                            Microsoft AI-900
-                        </h3>
-
-                        <p class="card-text">
-                            Implantação de Serviços de Inteligência
-                            Artificial em Nuvem - Microsoft AI-900.
-                        </p>
-
-                        <p class="text-secondary">
-                            <strong>Carga horária:</strong> 40 horas
-                        </p>
-
-                        <a href="Microsoft AI-900.pdf"
-                            target="_blank"
-                            class="btn btn-outline-dark">
-                            Ver certificado
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </div>
+    </section>
 
+    <!-- MODAL DO CERTIFICADO -->
+    <div class="modal fade" id="modalCertificado" tabindex="-1"
+        aria-labelledby="tituloCertificado" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloCertificado">Certificado</h5>
+                    <button type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body p-0">
+                    <iframe id="pdfFrame" title="Certificado"></iframe>
+                </div>
+
+                <div class="modal-footer">
+                    <a id="pdfNovaAba" href="#" target="_blank" class="btn btn-outline-dark">
+                        Abrir em nova aba
+                    </a>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-</section>
-
-
     <!-- GITHUB -->
-    <section id="Github" class="bg-dark text-white py-5">
-
+    <section id="Github" class="text-white py-5">
         <div class="container text-center">
 
-            <h2 class="fw-bold">
-                Veja mais projetos
-            </h2>
+            <h2 class="fw-bold">Veja mais projetos</h2>
 
             <p class="mt-3">
                 Acesse meu GitHub para conhecer outros projetos e
@@ -536,40 +414,45 @@
             </p>
 
             <a href="https://github.com/lavyniaoliveira"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-light">
-
-                Acessar GitHub
-
-            </a>
+                target="_blank" rel="noopener noreferrer"
+                class="btn btn-light btn-lg">Acessar GitHub</a>
 
         </div>
-
     </section>
 
-
     <!-- RODAPÉ -->
-    <footer class="bg-black text-white text-center py-4">
-
+    <footer class="text-white text-center py-4">
         <div class="container">
-
-            <p class="mb-1 fw-bold">
-                Lavynia Oliveira
-            </p>
-
-            <p class="mb-0 text-secondary">
-                Análise e Desenvolvimento de Sistemas
-            </p>
-
+            <p class="mb-1 fw-bold">Lavynia Oliveira</p>
+            <p class="mb-0 text-secondary">Análise e Desenvolvimento de Sistemas</p>
         </div>
-
     </footer>
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
+        crossorigin="anonymous"></script>
+
+    <!-- Script do modal: coloca o PDF clicado dentro do iframe -->
+    <script>
+        const modal = document.getElementById('modalCertificado');
+        const frame = document.getElementById('pdfFrame');
+        const titulo = document.getElementById('tituloCertificado');
+        const novaAba = document.getElementById('pdfNovaAba');
+
+        modal.addEventListener('show.bs.modal', function (event) {
+            const botao = event.relatedTarget;
+            const pdf = encodeURI(botao.getAttribute('data-pdf'));
+
+            titulo.textContent = botao.getAttribute('data-titulo');
+            frame.src = pdf;
+            novaAba.href = pdf;
+        });
+
+        // Limpa o iframe ao fechar
+        modal.addEventListener('hidden.bs.modal', function () {
+            frame.src = '';
+        });
     </script>
 
 </body>
